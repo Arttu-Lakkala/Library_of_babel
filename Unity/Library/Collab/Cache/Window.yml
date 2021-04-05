@@ -16,8 +16,10 @@ MonoBehaviour:
     m_Keys:
     - Assets/Scenes/SampleScene.unity
     - Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs
+    - Packages/manifest.json
+    - Packages/packages-lock.json
     - 
-    m_Values: 000000
+    m_Values: 0000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
