@@ -47,7 +47,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
-            Debug.Log(StaticValues.floor);
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -263,6 +262,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
           if(other.gameObject.name == "Goal_cube")
           {
+            Debug.Log(StaticValues.floor);
             StaticValues.floor = StaticValues.floor + 1;
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
