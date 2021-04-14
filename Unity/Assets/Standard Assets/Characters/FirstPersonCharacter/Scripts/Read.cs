@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Read : MonoBehaviour
 {
+    public TextAsset textFile;
+    private string[] wordlist;
     // Start is called before the first frame update
     void Start()
     {
-        
+       wordlist = textFile.text.Split('\n');
+       Debug.Log(wordlist.Length);
     }
 
     // Update is called once per frame
