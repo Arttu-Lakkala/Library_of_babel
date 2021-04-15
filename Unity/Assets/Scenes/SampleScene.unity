@@ -7178,7 +7178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c161c58cea769469adfd3dbb1f4c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textFile: {fileID: 4900000, guid: f55600c7ac210bd4fa17436c9fe72af7, type: 3}
+  wordFile: {fileID: 4900000, guid: f55600c7ac210bd4fa17436c9fe72af7, type: 3}
+  letterFile: {fileID: 4900000, guid: 416166fc5f4b20346975039cd5208543, type: 3}
 --- !u!136 &1307646138
 CapsuleCollider:
   m_ObjectHideFlags: 0
