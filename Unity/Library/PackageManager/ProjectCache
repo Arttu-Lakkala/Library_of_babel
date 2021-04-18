@@ -1,19 +1,19 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/Users/A.J.E Lakkala/Documents/My Games/Library of Babel/Unity/Packages/manifest.json
+    m_FilePath: D:/git/Library_of_babel/Unity/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637535590166489838
+      ticks: 637535585087491699
     m_Hash: 3216669461
   m_LockFileStatus:
-    m_FilePath: C:/Users/A.J.E Lakkala/Documents/My Games/Library of Babel/Unity/Packages/packages-lock.json
+    m_FilePath: D:/git/Library_of_babel/Unity/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637535590166489838
+      ticks: 637535585087541890
     m_Hash: 905773292
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -25,7 +25,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.7
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.ide.rider@2.0.7
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.ide.rider@2.0.7
       assetPath: Packages/com.unity.ide.rider
       name: com.unity.ide.rider
       displayName: JetBrains Rider Editor
@@ -128,7 +128,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.7
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.ide.visualstudio@2.0.7
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.ide.visualstudio@2.0.7
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -209,7 +209,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.2.3
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.ide.vscode@1.2.3
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.ide.vscode@1.2.3
       assetPath: Packages/com.unity.ide.vscode
       name: com.unity.ide.vscode
       displayName: Visual Studio Code Editor
@@ -278,7 +278,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 4.5.0
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.probuilder@4.5.0
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.probuilder@4.5.0
       assetPath: Packages/com.unity.probuilder
       name: com.unity.probuilder
       displayName: ProBuilder
@@ -416,7 +416,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.1.24
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.test-framework@1.1.24
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.test-framework@1.1.24
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -504,7 +504,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 3.0.1
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.textmeshpro@3.0.1
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.textmeshpro@3.0.1
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -655,7 +655,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.4.6
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.timeline@1.4.6
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.timeline@1.4.6
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -2600,7 +2600,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.6
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.ext.nunit@1.0.6
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.ext.nunit@1.0.6
       assetPath: Packages/com.unity.ext.nunit
       name: com.unity.ext.nunit
       displayName: Custom NUnit
@@ -2661,7 +2661,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.3
       source: 1
-      resolvedPath: C:\Users\A.J.E Lakkala\Documents\My Games\Library of Babel\Unity\Library\PackageCache\com.unity.settings-manager@1.0.3
+      resolvedPath: D:\git\Library_of_babel\Unity\Library\PackageCache\com.unity.settings-manager@1.0.3
       assetPath: Packages/com.unity.settings-manager
       name: com.unity.settings-manager
       displayName: Settings Manager
@@ -2677,8 +2677,18 @@ m_PackageAssets:
       errors: []
       versions:
         all:
+        - 0.1.0-preview.4
+        - 0.1.0-preview.8
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
         - 1.0.3
         compatible:
+        - 0.1.0-preview.4
+        - 0.1.0-preview.8
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
         - 1.0.3
         verified: 1.0.3
       dependencies: []
@@ -2696,15 +2706,15 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637300096300000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/com.unity.settings-manager.git
+        url: git+https://github.com/Unity-Technologies/com.unity.settings-manager.git
         revision: 473664ccba1496294b741cf169740a5d54b3d0b6
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []
-m_ProjectPath: C:/Users/A.J.E Lakkala/Documents/My Games/Library of Babel/Unity/Packages
+m_ProjectPath: D:/git/Library_of_babel/Unity/Packages
 m_EditorVersion: 2020.3.2f1 (8fd9074bf66c)
