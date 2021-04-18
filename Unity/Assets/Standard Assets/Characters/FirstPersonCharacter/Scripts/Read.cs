@@ -21,6 +21,7 @@ public class Read : MonoBehaviour
     private string[] letterlist;
     private string[] textlist;
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,12 +45,14 @@ public class Read : MonoBehaviour
          if(Physics.Raycast(ray, out hit, 1000))
          {
            text1.text = textlist[UnityEngine.Random.Range(0,textlist.Length)];
+           text2.text = CreateSentence(StaticValues.floor);
          }
        }
        //Leftclick
        if(Input.GetMouseButtonUp(0))
        {
          book.SetActive(true);
+         
        }       
     }
     
@@ -107,7 +110,7 @@ public class Read : MonoBehaviour
        //generate word based on length
        for(int i=0; i<wordLength; i++)
        {
-         word = word + letterlist[UnityEngine.Random.Range(0,letterlist.Length)];
+         word = letterlist[UnityEngine.Random.Range(0,letterlist.Length)] + word;
        }
        return word;
     }
