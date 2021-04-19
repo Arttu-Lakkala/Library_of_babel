@@ -65,8 +65,10 @@
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\Scripts\LookAtPlayer.cs" />
+    <Compile Include="Assets\Scripts\PlaySoundInterval.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\textAssets\textFile.txt" />
      <None Include="Assets\textAssets\medicine_words.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
