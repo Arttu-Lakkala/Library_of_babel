@@ -6979,7 +6979,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 4
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -8423,7 +8423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &567749106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8943,7 +8943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &641823719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12130,6 +12130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordFile: {fileID: 4900000, guid: f55600c7ac210bd4fa17436c9fe72af7, type: 3}
+  specialFile: {fileID: 4900000, guid: 40f278a5d5d42894ead705d5ad682c22, type: 3}
   letterFile: {fileID: 4900000, guid: 416166fc5f4b20346975039cd5208543, type: 3}
   textFile: {fileID: 4900000, guid: 30f2dc4dc75207e41a4268de9e271dd8, type: 3}
   book: {fileID: 641823718}
@@ -15151,7 +15152,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16142
+  m_Name: pb_Mesh16666
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

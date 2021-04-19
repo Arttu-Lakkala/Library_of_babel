@@ -11,12 +11,14 @@ public class Read : MonoBehaviour
     //!REMINDER!
     //public variables are set in Inpector
     public TextAsset wordFile;
+    public TextAsset specialFile;
     public TextAsset letterFile;
     public TextAsset textFile;
     public GameObject book;
     public TMP_Text text1;
     public TMP_Text text2;
     private int meaningPrecentage;
+    private string[] speciallist;
     private string[] wordlist;
     private string[] charlist;
     private string[] letterlist;
@@ -28,6 +30,7 @@ public class Read : MonoBehaviour
     {
        wordlist = wordFile.text.Split('\n');
        charlist = letterFile.text.Split('\n');
+       speciallist = specialFile.text.Split('\n');
        textlist = textFile.text.Split('@');
        letterlist = new string[26];
        Array.Copy(charlist, 0, letterlist, 0, 26);
@@ -62,7 +65,7 @@ public class Read : MonoBehaviour
     {
       if(meaningPrecentage >= UnityEngine.Random.Range(1,100))
       {
-        return "<u>"+ wordlist[UnityEngine.Random.Range(0,wordlist.Length)] +"</u>";
+        return "<u>"+ speciallist[UnityEngine.Random.Range(0,speciallist.Length)] +"</u>";
       }  
       else
       {
