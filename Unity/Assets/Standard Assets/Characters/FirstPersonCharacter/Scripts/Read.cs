@@ -16,6 +16,7 @@ public class Read : MonoBehaviour
     public GameObject book;
     public TMP_Text text1;
     public TMP_Text text2;
+    private int meaningPrecentage;
     private string[] wordlist;
     private string[] charlist;
     private string[] letterlist;
@@ -30,6 +31,7 @@ public class Read : MonoBehaviour
        textlist = textFile.text.Split('@');
        letterlist = new string[26];
        Array.Copy(charlist, 0, letterlist, 0, 26);
+       meaningPrecentage = 10;
     }
 
     // Update is called once per frame
@@ -58,7 +60,14 @@ public class Read : MonoBehaviour
     
     string PickWord()
     {
-      return wordlist[UnityEngine.Random.Range(0,wordlist.Length)];
+      if(meaningPrecentage >= UnityEngine.Random.Range(1,100))
+      {
+        return "<u>"+ wordlist[UnityEngine.Random.Range(0,wordlist.Length)] +"</u>";
+      }  
+      else
+      {
+        return wordlist[UnityEngine.Random.Range(0,wordlist.Length)];
+      }
     }
     
     string CreateWord()
@@ -112,6 +121,11 @@ public class Read : MonoBehaviour
        {
          word = letterlist[UnityEngine.Random.Range(0,letterlist.Length)] + word;
        }
+       if(meaningPrecentage >= UnityEngine.Random.Range(1,100))
+       {
+         word = "<u>"+word+"</u>";
+       } 
+       
        return word;
     }
     string CreateSentence(int randomnes = 0)
