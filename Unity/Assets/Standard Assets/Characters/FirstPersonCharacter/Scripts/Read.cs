@@ -45,7 +45,7 @@ public class Read : MonoBehaviour
          if(Physics.Raycast(ray, out hit, 1000))
          {
            text1.text = textlist[UnityEngine.Random.Range(0,textlist.Length)];
-           text2.text = CreateSentence(StaticValues.floor);
+           text2.text = CreateText(100, StaticValues.floor);
          }
        }
        //Leftclick
@@ -171,5 +171,44 @@ public class Read : MonoBehaviour
        }
      }
      return sentence;
+    }
+    string CreateText(int length,int randomnes = 0)
+    {
+      string text = "";
+      while(text.Length< length)
+      {
+        if (randomnes<6)
+        {
+          //random to normal word ratio varies from 0 -> 50 %
+          text = text + CreateSentence(randomnes) + "  ";
+        }
+        else if (randomnes <10)
+        {
+          //vary the random to normal word 50 -> 400%
+          if(0 == UnityEngine.Random.Range(0,(randomnes-5)))
+          {
+            text = text + PickWord() + charlist[UnityEngine.Random.Range(27,32)];
+          }
+          else
+          {
+            text = text + CreateWord() + charlist[UnityEngine.Random.Range(27,32)];
+          }
+            
+        }
+        else
+        {
+          //the amount of random charachters between words on avrage starts at 50 and increases by 5 per floor
+          if(0 == UnityEngine.Random.Range(0,(randomnes*5)))
+          {
+            text = text + PickWord();
+          }
+          else
+          {
+            text = text + charlist[UnityEngine.Random.Range(0,32)];
+          }
+        }
+      
+      }
+      return text;
     }
 }
