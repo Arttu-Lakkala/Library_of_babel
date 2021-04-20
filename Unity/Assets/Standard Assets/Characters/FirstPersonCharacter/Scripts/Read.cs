@@ -35,6 +35,8 @@ public class Read : MonoBehaviour
        letterlist = new string[26];
        Array.Copy(charlist, 0, letterlist, 0, 26);
        meaningPrecentage = 10;
+       text1.text = textlist[UnityEngine.Random.Range(0,textlist.Length)];
+       text2.text = CreateText(100, StaticValues.floor);
     }
 
     // Update is called once per frame
@@ -44,20 +46,20 @@ public class Read : MonoBehaviour
        if(Input.GetMouseButtonUp(1))
        {
          book.SetActive(false);
-         RaycastHit hit;
-         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+         text1.text = textlist[UnityEngine.Random.Range(0,textlist.Length)];
+         text2.text = CreateText(100, StaticValues.floor);
          
-         if(Physics.Raycast(ray, out hit, 1000))
-         {
-           text1.text = textlist[UnityEngine.Random.Range(0,textlist.Length)];
-           text2.text = CreateText(100, StaticValues.floor);
-         }
        }
        //Leftclick
        if(Input.GetMouseButtonUp(0))
        {
-         book.SetActive(true);
-         
+         RaycastHit hit;
+         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+         if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("shelf")))
+         {
+          book.SetActive(true);
+         }
        }       
     }
     
