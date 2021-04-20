@@ -15,8 +15,12 @@ public class Read : MonoBehaviour
     public TextAsset letterFile;
     public TextAsset textFile;
     public GameObject book;
+    public GameObject uiLibrarian;
+    public GameObject uiGrandma;
+    public GameObject dialogBox;
     public TMP_Text text1;
     public TMP_Text text2;
+    public TMP_Text dialogText;
     private int meaningPrecentage;
     private string[] speciallist;
     private string[] wordlist;
@@ -45,7 +49,10 @@ public class Read : MonoBehaviour
        //rightclick
        if(Input.GetMouseButtonUp(1))
        {
+         //close UI elements
          book.SetActive(false);
+         dialogBox.SetActive(false);
+         uiLibrarian.SetActive(false);
 
          text1.text = textlist[UnityEngine.Random.Range(0,textlist.Length)];
          text2.text = CreateText(100, StaticValues.floor);
@@ -59,6 +66,14 @@ public class Read : MonoBehaviour
          if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("shelf")))
          {
           book.SetActive(true);
+         }
+         else{
+          RaycastHit2D hitInfo = Physics2D.Raycast(Input.mousePosition, Vector2.zero);
+          if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("nonPc")))
+          {
+            dialogBox.SetActive(true);
+            uiLibrarian.SetActive(true);
+          }
          }
        }       
     }
