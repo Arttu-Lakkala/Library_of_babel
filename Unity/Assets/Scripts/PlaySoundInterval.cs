@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class PlaySoundInterval : MonoBehaviour
 {
-    public float interval = 5.0f;
-    private float interval_return;
-
-    public AudioSource audioSource;
-    public AudioClip audioClip;
+    public float intervalMin;
+    public float intervalMax ;
+    public float startTime;
+    
+    private float interval;
+    private GameObject parent;
+    private Component[] audioList;
+    private AudioSource audioSource;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        interval_return = interval;
+        parent = gameObject;
+        audioList = parent.GetComponents(typeof(AudioSource));
+        if(startTime != 0)
+        {
+          interval = startTime;
+        }
+        else
+        {
+          interval = Random.Range(intervalMin,intervalMax);
+        }
     }
 
     // Update is called once per frame
@@ -28,8 +39,10 @@ public class PlaySoundInterval : MonoBehaviour
         }
         if(interval <= 0)
         {
-            audioSource.PlayOneShot(audioClip);
-            interval = interval_return;
+            Debug.Log("Hep");
+            audioSource = audioList[Random.Range(0,(audioList.Length))] as AudioSource;
+            audioSource.Play();
+            interval = Random.Range(intervalMin,intervalMax);
         }
     }
 }

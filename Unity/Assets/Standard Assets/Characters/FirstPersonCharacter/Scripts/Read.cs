@@ -48,6 +48,7 @@ public class Read : MonoBehaviour
        if(Input.GetMouseButtonUp(1))
        {
          //close UI elements
+         uiGrandma.SetActive(false);
          book.SetActive(false);
          dialogBox.SetActive(false);
          uiLibrarian.SetActive(false);  
