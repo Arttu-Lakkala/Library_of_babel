@@ -12389,8 +12389,12 @@ MonoBehaviour:
   letterFile: {fileID: 4900000, guid: 416166fc5f4b20346975039cd5208543, type: 3}
   textFile: {fileID: 4900000, guid: 30f2dc4dc75207e41a4268de9e271dd8, type: 3}
   book: {fileID: 641823718}
+  uiLibrarian: {fileID: 1849517322}
+  uiGrandma: {fileID: 1831007519}
+  dialogBox: {fileID: 659595209}
   text1: {fileID: 1821797402}
   text2: {fileID: 310220197}
+  dialogText: {fileID: 0}
 --- !u!136 &1307646138
 CapsuleCollider:
   m_ObjectHideFlags: 0
