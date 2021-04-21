@@ -14,6 +14,7 @@ public class Read : MonoBehaviour
     public TextAsset specialFile;
     public TextAsset letterFile;
     public TextAsset textFile;
+    public TextAsset dialogFile;
     public GameObject book;
     public GameObject uiLibrarian;
     public GameObject uiGrandma;
@@ -27,6 +28,7 @@ public class Read : MonoBehaviour
     private string[] charlist;
     private string[] letterlist;
     private string[] textlist;
+    private string[] dialoglist;
     
     
     // Start is called before the first frame update
@@ -36,6 +38,7 @@ public class Read : MonoBehaviour
        charlist = letterFile.text.Split('\n');
        speciallist = specialFile.text.Split('\n');
        textlist = textFile.text.Split('@');
+       dialoglist = dialogFile.text.Split('@');
        letterlist = new string[26];
        Array.Copy(charlist, 0, letterlist, 0, 26);
        meaningPrecentage = 10;
@@ -79,6 +82,7 @@ public class Read : MonoBehaviour
           RaycastHit2D hitInfo = Physics2D.Raycast(Input.mousePosition, Vector2.zero);
           if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("nonPc")))
           {
+            dialogText.text = dialoglist[StaticValues.floor];
             dialogBox.SetActive(true);
             uiLibrarian.SetActive(true);
           }
