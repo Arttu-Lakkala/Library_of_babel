@@ -29,6 +29,7 @@ public class Read : MonoBehaviour
     private string[] letterlist;
     private string[] textlist;
     private string[] dialoglist;
+    private int grandmaFloor;
     
     
     // Start is called before the first frame update
@@ -42,6 +43,7 @@ public class Read : MonoBehaviour
        letterlist = new string[26];
        Array.Copy(charlist, 0, letterlist, 0, 26);
        meaningPrecentage = 10;
+       grandmaFloor = 4;
     }
 
     // Update is called once per frame
@@ -84,7 +86,14 @@ public class Read : MonoBehaviour
           {
             dialogText.text = dialoglist[StaticValues.floor];
             dialogBox.SetActive(true);
-            uiLibrarian.SetActive(true);
+            if (StaticValues.floor == grandmaFloor)
+            {
+             uiGrandma.SetActive(true); 
+            }
+            else
+            {
+              uiLibrarian.SetActive(true);
+            }
           }
          }
        }       
