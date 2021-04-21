@@ -232,7 +232,11 @@ public class Read : MonoBehaviour
       string text = "";
       while(text.Length< length)
       {
-        if (randomnes<6)
+        if (randomnes==5)
+        {
+          text = text + "ywh hwy";
+        }
+        else if (randomnes<6)
         {
           //random to normal word ratio varies from 0 -> 50 %
           text = text + CreateSentence(randomnes) + "  ";
