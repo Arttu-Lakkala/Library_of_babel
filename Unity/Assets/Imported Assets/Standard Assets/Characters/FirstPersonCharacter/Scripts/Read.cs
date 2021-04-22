@@ -60,11 +60,11 @@ public class Read : MonoBehaviour
        Array.Copy(charlist, 0, letterlist, 0, 26);
        meaningPrecentage = 10;
        grandmaFloor = 4;
-       librarianCounter = 0;
-       floorDialog = dialoglist[StaticValues.floor].Split('$');
        audioSource = GetComponent<AudioSource>();
        firstRead = true;
        lastFloor = 16;
+       librarianCounter = 0;
+       floorDialog = dialoglist[StaticValues.floor].Split('$');
     }
 
     // Update is called once per frame
@@ -155,7 +155,7 @@ public class Read : MonoBehaviour
               StaticValues.busy = true;
               dialogText.text = floorDialog[librarianCounter];
               librarianCounter = librarianCounter +1;
-              if(librarianCounter==floorDialog.Length)
+              if(librarianCounter>=floorDialog.Length)
               {
                 librarianCounter = 0;
               }
