@@ -74,11 +74,17 @@ public class Read : MonoBehaviour
             StaticValues.busy = true;
             if(StaticValues.floor ==0)
             {
-              string[] preset = textlist[UnityEngine.Random.Range(0,textlist.Length)].Split('$');
+              int textIndex = UnityEngine.Random.Range(0,textlist.Length);
+              string[] preset = textlist[textIndex].Split('$');
               text1.text = preset[0];
               text2.text = preset[1];
               text1.fontSize = 24;
               text2.fontSize = 24;
+              if(textIndex ==0)
+              {
+               text1.fontSize = 20;
+               text2.fontSize = 20;
+              }
             }
             else
             {
