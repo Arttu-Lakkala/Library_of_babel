@@ -7647,8 +7647,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15634,10 +15634,11 @@ MonoBehaviour:
   dialogText: {fileID: 115875286}
   pageSound: {fileID: 8300000, guid: 9df87884342bf5b468802d1482ab0686, type: 3}
   librarianCough: {fileID: 8300000, guid: 43d3312696da25240a92c8ad2703ce07, type: 3}
-  librarianWhisper: {fileID: 0}
   librarianStrange: {fileID: 8300000, guid: 6bb62837cc37b3e4487a32af7807fbd8, type: 3}
   librarianDuck: {fileID: 8300000, guid: 020b03b4e5689444abc77f7f2bbb5abe, type: 3}
   librarianTrain: {fileID: 8300000, guid: 7f8468d30a1a2594b801d74bf2e575bf, type: 3}
+  librarianElectric: {fileID: 8300000, guid: c980cd4231a06f2488e86638326c75c9, type: 3}
+  librarianBird: {fileID: 8300000, guid: 2b34b1ed96d797040a8240ac675f97e9, type: 3}
 --- !u!136 &1307646138
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19251,8 +19252,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

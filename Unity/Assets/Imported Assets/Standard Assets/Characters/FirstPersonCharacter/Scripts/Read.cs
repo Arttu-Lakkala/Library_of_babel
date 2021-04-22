@@ -175,10 +175,20 @@ public class Read : MonoBehaviour
                 audioSource.volume = 1.0f;
                 audioSource.clip = pageSound;
               }
+              else if(StaticValues.floor == 10)
+              {
+                audioSource.volume = 0.20f;
+                audioSource.clip = librarianBird;
+              }
               else if(StaticValues.floor == 14)
               {
                 audioSource.volume = 0.20f;
                 audioSource.clip = librarianDuck;
+              }
+              else if(StaticValues.floor == 15)
+              {
+                audioSource.volume = 0.20f;
+                audioSource.clip = librarianElectric;
               }
               else
               {
