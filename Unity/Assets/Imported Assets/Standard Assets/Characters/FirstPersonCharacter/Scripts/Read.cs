@@ -83,6 +83,8 @@ public class Read : MonoBehaviour
            dialogBox.SetActive(false);
            uiLibrarian.SetActive(false);
            audioSource.volume = 0.25f;
+           text1.fontSize = 24;
+           text2.fontSize = 24;
          }         
        }
        //Leftclick
@@ -136,8 +138,8 @@ public class Read : MonoBehaviour
             }
             else
             {
-            text1.text = CreateText(200, StaticValues.floor);
-            text2.text = CreateText(200, StaticValues.floor);
+              text1.text = CreateText(200, StaticValues.floor);
+              text2.text = CreateText(200, StaticValues.floor);
             }
             if(firstRead)
             {
