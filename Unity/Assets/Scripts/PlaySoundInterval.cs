@@ -39,7 +39,6 @@ public class PlaySoundInterval : MonoBehaviour
         }
         if(interval <= 0)
         {
-            Debug.Log("Hep");
             audioSource = audioList[Random.Range(0,(audioList.Length))] as AudioSource;
             audioSource.Play();
             interval = Random.Range(intervalMin,intervalMax);
