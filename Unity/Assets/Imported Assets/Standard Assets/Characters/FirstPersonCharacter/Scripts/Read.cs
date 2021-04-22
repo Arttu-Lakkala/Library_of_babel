@@ -18,6 +18,7 @@ public class Read : MonoBehaviour
     public TextAsset dialogFile;
     public GameObject book;
     public GameObject uiLibrarian;
+    public GameObject uiTraveler;
     public GameObject uiGrandma;
     public GameObject dialogBox;
     public TMP_Text text1;
@@ -43,6 +44,7 @@ public class Read : MonoBehaviour
     private AudioSource audioSource;
     private int librarianCounter;
     private bool firstRead;
+    private int lastFloor;
     
     
     // Start is called before the first frame update
@@ -62,6 +64,7 @@ public class Read : MonoBehaviour
        floorDialog = dialoglist[StaticValues.floor].Split('$');
        audioSource = GetComponent<AudioSource>();
        firstRead = true;
+       lastFloor = 16;
     }
 
     // Update is called once per frame
@@ -74,6 +77,7 @@ public class Read : MonoBehaviour
          {
            StaticValues.busy = false;
            //close UI elements
+           uiTraveler.SetActive(false);
            uiGrandma.SetActive(false);
            book.SetActive(false);
            dialogBox.SetActive(false);
@@ -158,6 +162,10 @@ public class Read : MonoBehaviour
               if (StaticValues.floor == grandmaFloor)
               {
                uiGrandma.SetActive(true); 
+              }
+              else if (StaticValues.floor == lastFloor)
+              {
+               uiTraveler.SetActive(true); 
               }
               else
               {
