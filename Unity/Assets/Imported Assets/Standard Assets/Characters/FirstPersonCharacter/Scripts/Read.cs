@@ -64,7 +64,10 @@ public class Read : MonoBehaviour
        firstRead = true;
        lastFloor = 16;
        librarianCounter = 0;
-       floorDialog = dialoglist[StaticValues.floor].Split('$');
+       if(StaticValues.floor<=16)
+       {
+        floorDialog = dialoglist[StaticValues.floor].Split('$');
+       }
     }
 
     // Update is called once per frame
