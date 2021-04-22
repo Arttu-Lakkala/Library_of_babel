@@ -99,21 +99,8 @@ public class Read : MonoBehaviour
             audioSource.clip = pageSound;
             audioSource.Play();
             //in the future if there are alot of single floors change them to switch case and have createtext be default
-            if(StaticValues.floor ==0)
-            {
-              int textIndex = UnityEngine.Random.Range(0,textlist.Length);
-              string[] preset = textlist[textIndex].Split('$');
-              text1.text = preset[0];
-              text2.text = preset[1];
-              text1.fontSize = 24;
-              text2.fontSize = 24;
-              if(textIndex ==0)
-              {
-               text1.fontSize = 20;
-               text2.fontSize = 20;
-              }
-            }
-            else if(StaticValues.floor ==5 & firstRead)
+            //also needs major refactoring
+            if(StaticValues.floor ==5 & firstRead)
             {
               string[] preset = specialList[0].Split('$');
               text1.text = preset[0];
@@ -133,6 +120,19 @@ public class Read : MonoBehaviour
               exeption=exeption + exeption;
               text1.text = exeption;
               text2.text = exeption;
+            }
+            else if(firstRead & StaticValues.floor<5)
+            {
+              string[] preset = textlist[StaticValues.floor].Split('$');
+              text1.text = preset[0];
+              text2.text = preset[1];
+              text1.fontSize = 24;
+              text2.fontSize = 24;
+              if(StaticValues.floor ==0)
+              {
+               text1.fontSize = 20;
+               text2.fontSize = 20;
+              }
             }
             else
             {
