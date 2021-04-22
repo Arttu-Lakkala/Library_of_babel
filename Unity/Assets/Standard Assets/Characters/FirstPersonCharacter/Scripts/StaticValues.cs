@@ -6,6 +6,7 @@ public class StaticValues : MonoBehaviour
 {
     //Global variables
     public static int floor = 0;
+    public static bool busy = false;
     // Start is called before the first frame update
     void Start()
     {

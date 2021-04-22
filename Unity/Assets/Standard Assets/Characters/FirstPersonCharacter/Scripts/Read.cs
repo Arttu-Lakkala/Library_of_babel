@@ -52,51 +52,60 @@ public class Read : MonoBehaviour
        //rightclick
        if(Input.GetMouseButtonUp(1))
        {
-         //close UI elements
-         uiGrandma.SetActive(false);
-         book.SetActive(false);
-         dialogBox.SetActive(false);
-         uiLibrarian.SetActive(false);  
+         if((StaticValues.busy))
+         {
+           StaticValues.busy = false;
+           //close UI elements
+           uiGrandma.SetActive(false);
+           book.SetActive(false);
+           dialogBox.SetActive(false);
+           uiLibrarian.SetActive(false); 
+         }         
        }
        //Leftclick
        if(Input.GetMouseButtonUp(0))
        {
-         RaycastHit hit;
-         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-         if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("shelf")))
+         if(!(StaticValues.busy))
          {
-          if(StaticValues.floor ==0)
-          {
-            string[] preset = textlist[UnityEngine.Random.Range(0,textlist.Length)].Split('$');
-            text1.text = preset[0];
-            text2.text = preset[1];
-            text1.fontSize = 24;
-            text2.fontSize = 24;
-          }
-          else
-          {
-          text1.text = CreateText(200, StaticValues.floor);
-          text2.text = CreateText(200, StaticValues.floor);
-          }
-          book.SetActive(true);
-         }
-         else{
-          RaycastHit2D hitInfo = Physics2D.Raycast(Input.mousePosition, Vector2.zero);
-          if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("nonPc")))
-          {
-            dialogText.text = dialoglist[StaticValues.floor];
-            dialogBox.SetActive(true);
-            if (StaticValues.floor == grandmaFloor)
+           RaycastHit hit;
+           Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+           if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("shelf")))
+           {
+            StaticValues.busy = true;
+            if(StaticValues.floor ==0)
             {
-             uiGrandma.SetActive(true); 
+              string[] preset = textlist[UnityEngine.Random.Range(0,textlist.Length)].Split('$');
+              text1.text = preset[0];
+              text2.text = preset[1];
+              text1.fontSize = 24;
+              text2.fontSize = 24;
             }
             else
             {
-              uiLibrarian.SetActive(true);
+            text1.text = CreateText(200, StaticValues.floor);
+            text2.text = CreateText(200, StaticValues.floor);
+            }
+            book.SetActive(true);
+           }
+           else{
+            StaticValues.busy = true;
+            RaycastHit2D hitInfo = Physics2D.Raycast(Input.mousePosition, Vector2.zero);
+            if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("nonPc")))
+            {
+              dialogText.text = dialoglist[StaticValues.floor];
+              dialogBox.SetActive(true);
+              if (StaticValues.floor == grandmaFloor)
+              {
+               uiGrandma.SetActive(true); 
+              }
+              else
+              {
+                uiLibrarian.SetActive(true);
+              }
             }
           }
-         }
-       }       
+       }
+      }       
     }
     
     string PickWord()
