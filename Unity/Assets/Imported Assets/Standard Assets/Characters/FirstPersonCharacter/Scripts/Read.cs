@@ -151,20 +151,24 @@ public class Read : MonoBehaviour
               }
               //play sound
               //might consider switch here as well
-              if(StaticValues.floor == 1)
+              if(StaticValues.floor == 12)
               {
                 audioSource.volume = 0.20f;
                 audioSource.clip = librarianTrain;
               }
-              else if(StaticValues.floor == 3)
+              else if(StaticValues.floor == 13)
+              {
+                audioSource.volume = 1.0f;
+                audioSource.clip = pageSound;
+              }
+              else if(StaticValues.floor == 14)
               {
                 audioSource.volume = 0.20f;
                 audioSource.clip = librarianDuck;
               }
               else
               {
-                int randomSound = UnityEngine.Random.Range(0,2);
-                if(randomSound ==0)
+                if(StaticValues.floor<9)
                 {
                   audioSource.volume = 0.13f;
                   audioSource.clip = librarianCough;
