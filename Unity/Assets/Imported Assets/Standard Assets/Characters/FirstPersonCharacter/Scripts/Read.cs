@@ -187,7 +187,7 @@ public class Read : MonoBehaviour
               }
               else if(StaticValues.floor == 10)
               {
-                audioSource.volume = 0.20f;
+                audioSource.volume = 0.15f;
                 audioSource.clip = librarianBird;
               }
               else if(StaticValues.floor == 14)
