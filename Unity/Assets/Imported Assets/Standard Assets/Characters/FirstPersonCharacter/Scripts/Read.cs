@@ -62,9 +62,9 @@ public class Read : MonoBehaviour
        grandmaFloor = 4;
        audioSource = GetComponent<AudioSource>();
        firstRead = true;
-       lastFloor = 16;
+       lastFloor = 17;
        librarianCounter = 0;
-       if(StaticValues.floor<=16)
+       if(StaticValues.floor<=17)
        {
         floorDialog = dialoglist[StaticValues.floor].Split('$');
        }
@@ -119,12 +119,20 @@ public class Read : MonoBehaviour
               text1.text = preset[0];
               text2.text = preset[1];
             }
-            else if(StaticValues.floor ==9)
+            else if(StaticValues.floor ==10)
             {
               string exeption="YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW";
               exeption=exeption + exeption;
               text1.text = exeption;
               text2.text = exeption;
+            }
+            else if(StaticValues.floor ==9)
+            {
+              string[] preset = specialList[2].Split('$');
+              text1.text = preset[0];
+              text2.text = preset[1];
+              text1.fontSize = 24;
+              text2.fontSize = 24;
             }
             else if(firstRead & StaticValues.floor<5)
             {
@@ -178,34 +186,34 @@ public class Read : MonoBehaviour
               }
               //play sound
               //might consider switch here as well
-              if(StaticValues.floor == 12)
+              if(StaticValues.floor == 13)
               {
                 audioSource.volume = 0.20f;
                 audioSource.clip = librarianTrain;
               }
-              else if(StaticValues.floor == 13)
+              else if(StaticValues.floor == 14)
               {
                 audioSource.volume = 1.0f;
                 audioSource.clip = pageSound;
               }
-              else if(StaticValues.floor == 10)
+              else if(StaticValues.floor == 11)
               {
                 audioSource.volume = 0.15f;
                 audioSource.clip = librarianBird;
               }
-              else if(StaticValues.floor == 14)
+              else if(StaticValues.floor == 15)
               {
                 audioSource.volume = 0.20f;
                 audioSource.clip = librarianDuck;
               }
-              else if(StaticValues.floor == 15)
+              else if(StaticValues.floor == 16)
               {
                 audioSource.volume = 0.20f;
                 audioSource.clip = librarianElectric;
               }
               else
               {
-                if(StaticValues.floor<9)
+                if(StaticValues.floor<10)
                 {
                   audioSource.volume = 0.13f;
                   audioSource.clip = librarianCough;

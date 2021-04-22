@@ -7,7 +7,7 @@ public class LookAtPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      if(StaticValues.floor>16){
+      if(StaticValues.floor>17){
         Destroy(gameObject);
       }
     }
