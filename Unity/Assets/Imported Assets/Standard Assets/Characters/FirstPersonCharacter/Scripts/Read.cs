@@ -125,7 +125,7 @@ public class Read : MonoBehaviour
             }
             else if(StaticValues.floor ==9)
             {
-              string exeption="YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY";
+              string exeption="YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW YHW HYW";
               exeption=exeption + exeption;
               text1.text = exeption;
               text2.text = exeption;
