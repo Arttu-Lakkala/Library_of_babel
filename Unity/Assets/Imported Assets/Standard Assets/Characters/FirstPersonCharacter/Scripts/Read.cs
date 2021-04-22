@@ -14,6 +14,7 @@ public class Read : MonoBehaviour
     public TextAsset specialFile;
     public TextAsset letterFile;
     public TextAsset textFile;
+    public TextAsset specialTexts;
     public TextAsset dialogFile;
     public GameObject book;
     public GameObject uiLibrarian;
@@ -22,6 +23,7 @@ public class Read : MonoBehaviour
     public TMP_Text text1;
     public TMP_Text text2;
     public TMP_Text dialogText;
+    public AudioClip pageSound;
     private int meaningPrecentage;
     private string[] speciallist;
     private string[] wordlist;
@@ -29,7 +31,9 @@ public class Read : MonoBehaviour
     private string[] letterlist;
     private string[] textlist;
     private string[] dialoglist;
+    private string[] specialList;
     private int grandmaFloor;
+    private AudioSource audioSource;
     
     
     // Start is called before the first frame update
@@ -39,11 +43,13 @@ public class Read : MonoBehaviour
        charlist = letterFile.text.Split('\n');
        speciallist = specialFile.text.Split('\n');
        textlist = textFile.text.Split('@');
+       specialList = specialTexts.text.Split('@');
        dialoglist = dialogFile.text.Split('@');
        letterlist = new string[26];
        Array.Copy(charlist, 0, letterlist, 0, 26);
        meaningPrecentage = 10;
        grandmaFloor = 4;
+       audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -59,7 +65,8 @@ public class Read : MonoBehaviour
            uiGrandma.SetActive(false);
            book.SetActive(false);
            dialogBox.SetActive(false);
-           uiLibrarian.SetActive(false); 
+           uiLibrarian.SetActive(false);
+           audioSource.volume = 0.25f;
          }         
        }
        //Leftclick
@@ -72,6 +79,10 @@ public class Read : MonoBehaviour
            if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("shelf")))
            {
             StaticValues.busy = true;
+            audioSource.volume = 1.0f;
+            audioSource.clip = pageSound;
+            audioSource.Play();
+            //in the future if there are alot of single floors change them to switch case and have createtext be default
             if(StaticValues.floor ==0)
             {
               int textIndex = UnityEngine.Random.Range(0,textlist.Length);
@@ -86,6 +97,21 @@ public class Read : MonoBehaviour
                text2.fontSize = 20;
               }
             }
+            else if(StaticValues.floor ==5)
+            {
+              string[] preset = specialList[0].Split('$');
+              text1.text = preset[0];
+              text2.text = preset[1];
+              text1.fontSize = 24;
+              text2.fontSize = 24;
+            }
+            else if(StaticValues.floor ==9)
+            {
+              string exeption="YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY YWH HWY";
+              exeption=exeption + exeption;
+              text1.text = exeption;
+              text2.text = exeption;
+            }
             else
             {
             text1.text = CreateText(200, StaticValues.floor);
@@ -94,10 +120,10 @@ public class Read : MonoBehaviour
             book.SetActive(true);
            }
            else{
-            StaticValues.busy = true;
             RaycastHit2D hitInfo = Physics2D.Raycast(Input.mousePosition, Vector2.zero);
             if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("nonPc")))
             {
+              StaticValues.busy = true;
               dialogText.text = dialoglist[StaticValues.floor];
               dialogBox.SetActive(true);
               if (StaticValues.floor == grandmaFloor)
@@ -247,11 +273,7 @@ public class Read : MonoBehaviour
       string text = "";
       while(text.Length< length)
       {
-        if (randomnes==5)
-        {
-          text = text + "ywh hwy";
-        }
-        else if (randomnes<6)
+        if (randomnes<6)
         {
           //random to normal word ratio varies from 0 -> 50 %
           text = text + CreateSentence(randomnes) + "  ";
