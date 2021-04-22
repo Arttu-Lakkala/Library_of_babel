@@ -28,6 +28,8 @@ public class Read : MonoBehaviour
     public AudioClip librarianStrange;
     public AudioClip librarianDuck;
     public AudioClip librarianTrain;
+    public AudioClip librarianElectric;
+    public AudioClip librarianBird;
     private int meaningPrecentage;
     private string[] speciallist;
     private string[] wordlist;
@@ -40,6 +42,7 @@ public class Read : MonoBehaviour
     private int grandmaFloor;
     private AudioSource audioSource;
     private int librarianCounter;
+    private bool firstRead;
     
     
     // Start is called before the first frame update
@@ -58,6 +61,7 @@ public class Read : MonoBehaviour
        librarianCounter = 0;
        floorDialog = dialoglist[StaticValues.floor].Split('$');
        audioSource = GetComponent<AudioSource>();
+       firstRead = true;
     }
 
     // Update is called once per frame
@@ -105,13 +109,19 @@ public class Read : MonoBehaviour
                text2.fontSize = 20;
               }
             }
-            else if(StaticValues.floor ==5)
+            else if(StaticValues.floor ==5 & firstRead)
             {
               string[] preset = specialList[0].Split('$');
               text1.text = preset[0];
               text2.text = preset[1];
               text1.fontSize = 24;
               text2.fontSize = 24;
+            }
+            else if(StaticValues.floor == grandmaFloor & firstRead)
+            {
+              string[] preset = specialList[1].Split('$');
+              text1.text = preset[0];
+              text2.text = preset[1];
             }
             else if(StaticValues.floor ==9)
             {
@@ -124,6 +134,10 @@ public class Read : MonoBehaviour
             {
             text1.text = CreateText(200, StaticValues.floor);
             text2.text = CreateText(200, StaticValues.floor);
+            }
+            if(firstRead)
+            {
+              firstRead = false;
             }
             book.SetActive(true);
            }
