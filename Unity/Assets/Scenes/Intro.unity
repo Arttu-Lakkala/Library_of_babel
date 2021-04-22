@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,7 +437,7 @@ MonoBehaviour:
     in empty roads and then in the gaps between fingernails and skin. And then, as
     an unlocatable \u2018everywhere\u2019.\r\n\r\nGreat migrations to nowhere began.
     Indistinct forms passing by, day and night. And, along with them, those in search
-    of cause and remedy.\r\n\nIf there existed a remedy for this sickness, they knew,
+    of cause and remedy.\r\n\nIf there existed a cure for this sickness, they knew,
     it was hidden in the unseen pages of Library of Babel.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f0526886c4ca174b85fee32da4b0abc, type: 2}
