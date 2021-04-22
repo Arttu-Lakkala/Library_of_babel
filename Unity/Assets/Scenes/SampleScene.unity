@@ -770,7 +770,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 117.8866, y: 237.33876, z: -619.8486, w: -370.07574}
+  m_margin: {x: 117.8866, y: 255.78171, z: -619.8486, w: -370.07574}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10335,7 +10335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &659595210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15623,6 +15623,7 @@ MonoBehaviour:
   specialFile: {fileID: 4900000, guid: 40f278a5d5d42894ead705d5ad682c22, type: 3}
   letterFile: {fileID: 4900000, guid: 416166fc5f4b20346975039cd5208543, type: 3}
   textFile: {fileID: 4900000, guid: 30f2dc4dc75207e41a4268de9e271dd8, type: 3}
+  specialTexts: {fileID: 4900000, guid: 49dade4f973323c438f3946a17110785, type: 3}
   dialogFile: {fileID: 4900000, guid: acc979e1b6b6a63438a452c0565390ea, type: 3}
   book: {fileID: 641823718}
   uiLibrarian: {fileID: 1849517322}
@@ -15632,6 +15633,10 @@ MonoBehaviour:
   text2: {fileID: 310220197}
   dialogText: {fileID: 115875286}
   pageSound: {fileID: 8300000, guid: 9df87884342bf5b468802d1482ab0686, type: 3}
+  librarianCough: {fileID: 8300000, guid: 43d3312696da25240a92c8ad2703ce07, type: 3}
+  librarianStrange: {fileID: 8300000, guid: 6bb62837cc37b3e4487a32af7807fbd8, type: 3}
+  librarianDuck: {fileID: 8300000, guid: 020b03b4e5689444abc77f7f2bbb5abe, type: 3}
+  librarianTrain: {fileID: 8300000, guid: 7f8468d30a1a2594b801d74bf2e575bf, type: 3}
 --- !u!136 &1307646138
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19267,7 +19272,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -16.025208, z: -201.35983, w: -334.08365}
+  m_margin: {x: -19.310364, y: -16.025208, z: -208.67502, w: -334.08365}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

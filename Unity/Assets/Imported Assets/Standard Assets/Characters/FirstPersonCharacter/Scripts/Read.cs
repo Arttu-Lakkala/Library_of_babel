@@ -24,6 +24,10 @@ public class Read : MonoBehaviour
     public TMP_Text text2;
     public TMP_Text dialogText;
     public AudioClip pageSound;
+    public AudioClip librarianCough;
+    public AudioClip librarianStrange;
+    public AudioClip librarianDuck;
+    public AudioClip librarianTrain;
     private int meaningPrecentage;
     private string[] speciallist;
     private string[] wordlist;
@@ -32,8 +36,10 @@ public class Read : MonoBehaviour
     private string[] textlist;
     private string[] dialoglist;
     private string[] specialList;
+    private string[] floorDialog;
     private int grandmaFloor;
     private AudioSource audioSource;
+    private int librarianCounter;
     
     
     // Start is called before the first frame update
@@ -49,6 +55,8 @@ public class Read : MonoBehaviour
        Array.Copy(charlist, 0, letterlist, 0, 26);
        meaningPrecentage = 10;
        grandmaFloor = 4;
+       librarianCounter = 0;
+       floorDialog = dialoglist[StaticValues.floor].Split('$');
        audioSource = GetComponent<AudioSource>();
     }
 
@@ -123,9 +131,16 @@ public class Read : MonoBehaviour
             RaycastHit2D hitInfo = Physics2D.Raycast(Input.mousePosition, Vector2.zero);
             if(Physics.Raycast(ray, out hit, 2, LayerMask.GetMask("nonPc")))
             {
+              //set text 
               StaticValues.busy = true;
-              dialogText.text = dialoglist[StaticValues.floor];
+              dialogText.text = floorDialog[librarianCounter];
+              librarianCounter = librarianCounter +1;
+              if(librarianCounter==floorDialog.Length)
+              {
+                librarianCounter = 0;
+              }
               dialogBox.SetActive(true);
+              //set speaker
               if (StaticValues.floor == grandmaFloor)
               {
                uiGrandma.SetActive(true); 
@@ -134,6 +149,34 @@ public class Read : MonoBehaviour
               {
                 uiLibrarian.SetActive(true);
               }
+              //play sound
+              //might consider switch here as well
+              if(StaticValues.floor == 1)
+              {
+                audioSource.volume = 0.20f;
+                audioSource.clip = librarianTrain;
+              }
+              else if(StaticValues.floor == 3)
+              {
+                audioSource.volume = 0.20f;
+                audioSource.clip = librarianDuck;
+              }
+              else
+              {
+                int randomSound = UnityEngine.Random.Range(0,2);
+                if(randomSound ==0)
+                {
+                  audioSource.volume = 0.13f;
+                  audioSource.clip = librarianCough;
+                }
+                else
+                {
+                  audioSource.volume = 0.17f;
+                  audioSource.clip = librarianStrange;
+                }
+                
+              }
+              audioSource.Play();
             }
           }
        }
