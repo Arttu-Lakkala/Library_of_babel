@@ -264,7 +264,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
           if(other.gameObject.name == "Goal_cube")
           {
-            Debug.Log(StaticValues.floor);
             StaticValues.floor = StaticValues.floor + 1;
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
