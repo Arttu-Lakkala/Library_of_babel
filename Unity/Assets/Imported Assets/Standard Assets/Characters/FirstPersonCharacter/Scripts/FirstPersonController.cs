@@ -95,7 +95,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         private void FixedUpdate()
-        {
+        { 
+          if (Input.GetKey("escape"))
+          {
+            Application.Quit();
+          }
           if(!(StaticValues.busy)){
             float speed;
             GetInput(out speed);
